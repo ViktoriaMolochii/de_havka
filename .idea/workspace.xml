@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2107199-a976-46e7-8d62-e5333281005f" name="Changes" comment="change header color">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="d2107199-a976-46e7-8d62-e5333281005f" name="Changes" comment="add new markers">
       <change beforePath="$PROJECT_DIR$/src/components/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +64,7 @@
       <workItem from="1645441982370" duration="12688000" />
       <workItem from="1645556917723" duration="620000" />
       <workItem from="1648144701573" duration="11401000" />
-      <workItem from="1648190918817" duration="6257000" />
+      <workItem from="1648190918817" duration="6654000" />
     </task>
     <task id="LOCAL-00001" summary="change header color">
       <created>1648198125677</created>
@@ -77,7 +73,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648198125677</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add new markers">
+      <created>1648203094808</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648203094808</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add new markers">
+      <created>1648203241294</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648203241294</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change header color" />
-    <option name="LAST_COMMIT_MESSAGE" value="change header color" />
+    <MESSAGE value="add new markers" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new markers" />
   </component>
 </project>
