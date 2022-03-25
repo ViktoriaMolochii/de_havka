@@ -54,3 +54,19 @@
   width: 16%;
   height: 30px;
 }
+
+.control {
+  display: flex;
+  justify-items: flex-end;
+  justify-content: end;
+}
+
+.locale {
+  cursor: pointer;
+  position: relative;
+  bottom:  -15px;
+  padding-right: 10px;
+  text-align: center;
+  z-index: 100;
+  color: black
+}

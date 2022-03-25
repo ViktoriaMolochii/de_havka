@@ -1,22 +1,13 @@
 import React from 'react';
-import { useState } from "react";
-import props from 'prop-types';
+import { debounce, isEmpty } from 'lodash';
 
-const Header = () => {
-    const {onSearch} = props;
-
-    const [searchText, setSearchText] = useState('')
-
-    const handleInput = (e) => {
+const Header = ({ setSections, locale, userCoords }) => {
+    const handleInput = async (e) => {
         const text = e.target.value
-        setSearchText(text)
-    }
+            const response = await fetch('https://de-havka.herokuapp.com/good/' + text.toLowerCase())
+            const result = await response.json();
 
-    const handleEnterKeyPressed = (e) => {
-        if (e.key === 'Enter') {
-            // onSearch(searchText)
-            console.log(searchText);
-        }
+            setSections(response.status === 200 ? result : []);
     }
 
     return (
@@ -24,12 +15,11 @@ const Header = () => {
             <div className="control">
                 <input
                     className="input"
-                    onChange={handleInput}
-                    onKeyPress={handleEnterKeyPressed}
+                    onChange={debounce(handleInput, 700)}
                     type="text"
-                    value={searchText}
                     placeholder="Enter product"
                 />
+                <span className="locale" onClick={locale}>{!isEmpty(userCoords) ? 'Clear location' : 'Locale'}</span>
             </div>
         </div>
     );
