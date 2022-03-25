@@ -1,7 +1,8 @@
 /*global google*/
 import React from 'react';
 import { Loader } from "@googlemaps/js-api-loader"
-
+import {faLocationCrosshairs} from "@fortawesome/free-solid-svg-icons";
+import {faLocationDot} from "@fortawesome/free-solid-svg-icons";
 const loader = new Loader({
     apiKey: "AIzaSyCLMaPVOAW98gAe3sbIFYOdgUnpoZhCfak",
     version: "weekly",
@@ -17,6 +18,32 @@ loader.load().then(() => {
         center: { lat:49.84926512507221, lng: 24.021481756414516},
         zoom: 20.5,
     });
+    const geo= new google.maps.Marker({
+        position: { lat: 49.849511485681795,  lng:  24.02157789646219},
+        map,
+        icon: {
+            path: faLocationCrosshairs.icon[4],
+            fillColor: "#0000ff",
+            fillOpacity: 1,
+            scale: 0.075,
+        }
+    });
+
+    geo.addListener("click", () => {
+        new google.maps.Marker({
+            position: { lat:49.84916242061172,  lng:  24.02154327497081},
+            map,
+            icon: {
+                path: faLocationDot.icon[4],
+                fillColor: " #2e5acb",
+                fillOpacity: 1,
+                scale: 0.055,
+                opacity:1,
+            }
+        });
+
+    });
+
 
     arr.Marker_Fish=new google.maps.Marker({
         position:{ lat:49.849217311699284, lng: 24.02132739197455},
@@ -46,7 +73,7 @@ loader.load().then(() => {
     arr.Marker_Cash=new google.maps.Marker({
         position:{ lat:49.84917682603743, lng:24.02152030045225},
         map,
-        title: "Фрукти та овочі",
+        title: "Каси",
         opacity:0,
     });
     arr.Marker_Flowers=new google.maps.Marker({
@@ -71,6 +98,7 @@ loader.load().then(() => {
         position:{ lat:49.849324212369375, lng:  24.021576103123444},
         map,
         title: "Хлібна майстерня",
+        opacity:0,
     });
     arr.Marker_Gastronomy=new google.maps.Marker({
         position:{ lat:49.84931859153267, lng: 24.021410476719442},
@@ -157,15 +185,15 @@ loader.load().then(() => {
         title: "Дитяче харчування",
         opacity:0,
     });
-    arr.Marker_Eggs=new google.maps.Marker({
-        position:{ lat:49.84920790415205,   lng: 24.02141382948051},
+
+    arr.Marker_Eggs = new google.maps.Marker({
+        position: {lat: 49.84920790415205, lng: 24.02141382948051},
         map,
         title: "Яйця і яєчні вироби",
-        opacity:0,
+        opacity: 0,
     });
 
-
-        const bounds = new google.maps.LatLngBounds(
+    const bounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(49.84916939772307, 24.021310673681345),
         new google.maps.LatLng(49.8493260956819, 24.021663490608788)
     );
@@ -212,13 +240,15 @@ loader.load().then(() => {
             }
         }
     }
+
     const overlay = new USGSOverlay(bounds, image);
     overlay.setMap(map);
 });
+
 const Map = () => {
     return (
         <div id={'map'}></div>
-    );
+    )
 };
 
 export default Map;
